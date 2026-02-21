@@ -445,13 +445,12 @@
         }
       }
 
-      /* ROMANTIC SECTION - Single Photo Slider */
       .romantic-section {
         display: none;
         width: 100%;
         max-width: 900px;
         flex-direction: column;
-        gap: 30px;
+        gap: 20px;
         opacity: 0;
         transform: translateY(50px);
         transition: all 0.8s ease;
@@ -462,36 +461,20 @@
         opacity: 1;
         transform: translateY(0);
       }
+
+      .romantic-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
       .romantic-title {
         font-family: "Pacifico", cursive;
         font-size: 2.5rem;
         text-align: center;
         color: var(--button-primary);
-        margin-bottom: 20px;
-      }
-      .back-btn {
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        padding: 12px 25px;
-        font-size: 1rem;
-        font-family: "Poppins", sans-serif;
-        font-weight: 500;
-        color: white;
-        background: linear-gradient(135deg, #ff69b4, #ff1493);
-        border: none;
-        border-radius: 50px;
-        cursor: pointer;
-        box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
-        transition: all 0.3s ease;
-        z-index: 100;
-      }
-      .back-btn:hover {
-        transform: scale(1.05);
-        box-shadow: 0 6px 20px rgba(255, 105, 180, 0.5);
       }
 
-      /* Photo Slider Styles */
       .photo-slider {
         position: relative;
         width: 100%;
@@ -500,7 +483,7 @@
         border-radius: 20px;
         overflow: hidden;
         box-shadow: 0 10px 40px rgba(255, 105, 180, 0.3);
-        margin: 0 auto 20px;
+        margin: 0 auto;
       }
       .photo-slide {
         position: absolute;
@@ -523,7 +506,6 @@
         text-align: center;
         font-size: 1rem;
         color: var(--text-secondary);
-        margin-bottom: 15px;
       }
 
       .nav-buttons {
@@ -545,6 +527,25 @@
         transition: all 0.3s ease;
       }
       .nav-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(255, 105, 180, 0.5);
+      }
+
+      .back-btn {
+        align-self: center;
+        padding: 12px 25px;
+        font-size: 1rem;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        color: white;
+        background: linear-gradient(135deg, #ff69b4, #ff1493);
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+        transition: all 0.3s ease;
+      }
+      .back-btn:hover {
         transform: scale(1.05);
         box-shadow: 0 6px 20px rgba(255, 105, 180, 0.5);
       }
@@ -590,7 +591,6 @@
     </button>
 
     <div class="container">
-      <!-- Landing Section -->
       <div class="landing-section" id="landingSection">
         <div class="title-container">
           <h1 class="main-title">
@@ -605,7 +605,6 @@
         </button>
       </div>
 
-      <!-- Surprise Section -->
       <div class="surprise-section" id="surpriseSection">
         <div class="slideshow-container" id="slideshow">
           <div class="slide active">
@@ -653,21 +652,19 @@
         </button>
       </div>
 
-      <!-- Romantic Photos Section - Single Photo Slider -->
       <div class="romantic-section" id="romanticSection">
-        <button class="back-btn" id="backBtn">← Kembali</button>
-        <h2 class="romantic-title">📸 Momen Kita 💖</h2>
-
-        <div class="photo-slider" id="photoSlider">
-          <!-- Photos will be inserted by JavaScript -->
+        <div class="romantic-header">
+          <h2 class="romantic-title">📸 Momen Kita 💖</h2>
         </div>
 
+        <div class="photo-slider" id="photoSlider"></div>
         <p class="photo-counter" id="photoCounter">1 / 12</p>
 
         <div class="nav-buttons">
           <button class="nav-btn" id="prevPhotoBtn">← Prev</button>
           <button class="nav-btn" id="nextPhotoBtn">Next →</button>
         </div>
+        <button class="back-btn" id="backBtn">← Kembali</button>
       </div>
     </div>
 
@@ -688,7 +685,6 @@ Aku sangat beruntung memilikimu. Selamat ulang tahun, cintaku! 💕🎁✨
 Dengan cinta penuh,
 Yang selalu menyayangimu ❤️`;
 
-      // DOM Elements
       const musicBtn = document.getElementById("musicBtn");
       const surpriseBtn = document.getElementById("surpriseBtn");
       const landingSection = document.getElementById("landingSection");
@@ -702,7 +698,7 @@ Yang selalu menyayangimu ❤️`;
       const photoSlider = document.getElementById("photoSlider");
       const photoCounter = document.getElementById("photoCounter");
 
-      // Photo data
+      // SEMUA 12 FOTO DARI FOLDER
       const romanticPhotos = [
         "foto1.jpeg",
         "foto2.jpg",
@@ -719,7 +715,6 @@ Yang selalu menyayangimu ❤️`;
       ];
       let currentPhotoIndex = 0;
 
-      // Create particles
       function createParticles() {
         for (let i = 0; i < 20; i++) {
           const star = document.createElement("div");
@@ -743,7 +738,6 @@ Yang selalu menyayangimu ❤️`;
         }
       }
 
-      // Create confetti
       function createConfetti() {
         const colors = [
           "#FF69B4",
@@ -772,7 +766,6 @@ Yang selalu menyayangimu ❤️`;
         }, 6000);
       }
 
-      // Create balloons
       function createBalloon() {
         const colors = [
           "#FF69B4",
@@ -796,7 +789,6 @@ Yang selalu menyayangimu ❤️`;
         }, 13000);
       }
 
-      // Create slideshow dots
       function createSlideshowDots() {
         const slides = document.querySelectorAll(".slide");
         slides.forEach((_, index) => {
@@ -807,7 +799,6 @@ Yang selalu menyayangimu ❤️`;
         });
       }
 
-      // Slideshow functionality
       let currentSlide = 0;
       function goToSlide(index) {
         const slides = document.querySelectorAll(".slide");
@@ -825,7 +816,6 @@ Yang selalu menyayangimu ❤️`;
         goToSlide((currentSlide + 1) % slides.length);
       }
 
-      // Typing effect
       let charIndex = 0;
       function typeMessage() {
         if (charIndex < message.length) {
@@ -849,7 +839,7 @@ Yang selalu menyayangimu ❤️`;
         }
       }
 
-      // Music
+      // MUSIK DARI FILE local - lagu.mp3
       let birthdayAudio = null;
       let isPlaying = false;
       function playBirthdaySong() {
@@ -857,7 +847,11 @@ Yang selalu menyayangimu ❤️`;
           birthdayAudio = new Audio("lagu.mp3");
           birthdayAudio.loop = true;
         }
-        birthdayAudio.play();
+        birthdayAudio
+          .play()
+          .catch((e) =>
+            console.log("Autoplay blocked, user must interact first"),
+          );
       }
       function stopMusic() {
         if (birthdayAudio) {
@@ -875,7 +869,6 @@ Yang selalu menyayangimu ❤️`;
         }
       }
 
-      // Surprise button
       let surpriseOpened = false;
       function openSurprise() {
         if (surpriseOpened) return;
@@ -893,7 +886,6 @@ Yang selalu menyayangimu ❤️`;
         setTimeout(typeMessage, 1000);
       }
 
-      // Photo Slider Functions
       function createPhotoSlider() {
         romanticPhotos.forEach((photo, index) => {
           const slide = document.createElement("div");
@@ -932,7 +924,6 @@ Yang selalu menyayangimu ❤️`;
         showPhoto(newIndex);
       }
 
-      // Event Listeners
       musicBtn.addEventListener("click", toggleMusic);
       surpriseBtn.addEventListener("click", openSurprise);
       document.getElementById("romanticBtn").addEventListener("click", () => {
@@ -950,7 +941,6 @@ Yang selalu menyayangimu ❤️`;
         .getElementById("nextPhotoBtn")
         .addEventListener("click", nextPhoto);
 
-      // Initialize
       createParticles();
       createConfetti();
       createSlideshowDots();
