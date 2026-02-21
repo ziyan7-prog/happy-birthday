@@ -40,7 +40,6 @@
         color: var(--text-primary);
       }
 
-      /* Background Particles */
       .particles {
         position: fixed;
         top: 0;
@@ -50,12 +49,6 @@
         pointer-events: none;
         z-index: 0;
         overflow: hidden;
-      }
-
-      .particle {
-        position: absolute;
-        border-radius: 50%;
-        animation: floatParticle linear infinite;
       }
 
       .star {
@@ -85,17 +78,6 @@
         opacity: 0.7;
       }
 
-      @keyframes floatParticle {
-        0% {
-          transform: translateY(100vh) rotate(0deg);
-          opacity: 1;
-        }
-        100% {
-          transform: translateY(-100vh) rotate(720deg);
-          opacity: 0;
-        }
-      }
-
       @keyframes twinkle {
         0%,
         100% {
@@ -107,7 +89,6 @@
           transform: scale(1.2);
         }
       }
-
       @keyframes floatHeart {
         0%,
         100% {
@@ -118,7 +99,6 @@
         }
       }
 
-      /* Main Container */
       .container {
         position: relative;
         z-index: 1;
@@ -130,7 +110,6 @@
         padding: 20px;
       }
 
-      /* Landing Section */
       .landing-section {
         text-align: center;
         display: flex;
@@ -189,19 +168,16 @@
         justify-content: center;
         gap: 5px;
       }
-
       .title-decoration span {
         font-size: 1.2rem;
         animation: heartBeat 1s ease-in-out infinite;
       }
-
       .title-decoration span:nth-child(2) {
         animation-delay: 0.2s;
       }
       .title-decoration span:nth-child(3) {
         animation-delay: 0.4s;
       }
-
       @keyframes heartBeat {
         0%,
         100% {
@@ -212,7 +188,6 @@
         }
       }
 
-      /* Music Button */
       .music-btn {
         position: fixed;
         top: 20px;
@@ -231,16 +206,13 @@
         transition: all 0.3s ease;
         z-index: 100;
       }
-
       .music-btn:hover {
         transform: scale(1.1);
         box-shadow: 0 6px 20px rgba(255, 105, 180, 0.5);
       }
-
       .music-btn.playing {
         animation: pulse 1s ease-in-out infinite;
       }
-
       @keyframes pulse {
         0%,
         100% {
@@ -251,7 +223,6 @@
         }
       }
 
-      /* Surprise Button */
       .surprise-btn {
         padding: 18px 40px;
         font-size: 1.2rem;
@@ -268,32 +239,10 @@
         position: relative;
         overflow: hidden;
       }
-
-      .surprise-btn::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        background: rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        transition:
-          width 0.6s,
-          height 0.6s;
-      }
-
       .surprise-btn:hover {
         transform: scale(1.05);
         box-shadow: 0 12px 40px rgba(255, 105, 180, 0.6);
       }
-
-      .surprise-btn:hover::before {
-        width: 300px;
-        height: 300px;
-      }
-
       @keyframes bounce {
         0%,
         100% {
@@ -304,7 +253,6 @@
         }
       }
 
-      /* Surprise Section */
       .surprise-section {
         display: none;
         width: 100%;
@@ -315,14 +263,12 @@
         transform: translateY(50px);
         transition: all 0.8s ease;
       }
-
       .surprise-section.active {
         display: flex;
         opacity: 1;
         transform: translateY(0);
       }
 
-      /* Slideshow */
       .slideshow-container {
         position: relative;
         width: 100%;
@@ -331,7 +277,6 @@
         overflow: hidden;
         box-shadow: 0 10px 40px rgba(255, 105, 180, 0.2);
       }
-
       .slide {
         position: absolute;
         top: 0;
@@ -345,33 +290,22 @@
         justify-content: center;
         background: linear-gradient(135deg, #ffe4ec, #e8e4ff);
       }
-
       .slide.active {
         opacity: 1;
       }
-
-      .slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
       .slide-content {
         text-align: center;
         padding: 20px;
       }
-
       .slide-emoji {
         font-size: 5rem;
         margin-bottom: 10px;
       }
-
       .slide-text {
         font-size: 1.5rem;
         font-family: "Pacifico", cursive;
         color: var(--text-primary);
       }
-
       .slideshow-dots {
         position: absolute;
         bottom: 15px;
@@ -380,7 +314,6 @@
         display: flex;
         gap: 10px;
       }
-
       .dot {
         width: 12px;
         height: 12px;
@@ -389,13 +322,11 @@
         cursor: pointer;
         transition: all 0.3s ease;
       }
-
       .dot.active {
         background: var(--button-primary);
         transform: scale(1.2);
       }
 
-      /* Message Card */
       .message-card {
         background: var(--card-bg);
         backdrop-filter: blur(10px);
@@ -404,7 +335,6 @@
         box-shadow: 0 10px 40px rgba(255, 105, 180, 0.2);
         border: 1px solid rgba(255, 255, 255, 0.5);
       }
-
       .message-title {
         font-family: "Pacifico", cursive;
         font-size: 2rem;
@@ -412,14 +342,12 @@
         margin-bottom: 20px;
         color: var(--button-primary);
       }
-
       .message-text {
         font-size: 1.1rem;
         line-height: 1.8;
         color: var(--text-primary);
         text-align: center;
       }
-
       .typing-cursor {
         display: inline-block;
         width: 2px;
@@ -429,7 +357,6 @@
         animation: blink 0.7s infinite;
         vertical-align: text-bottom;
       }
-
       @keyframes blink {
         0%,
         50% {
@@ -441,7 +368,6 @@
         }
       }
 
-      /* Balloons */
       .balloons-container {
         position: fixed;
         top: 0;
@@ -452,7 +378,6 @@
         z-index: 0;
         overflow: hidden;
       }
-
       .balloon {
         position: absolute;
         bottom: -100px;
@@ -462,7 +387,6 @@
         animation: floatBalloon linear forwards;
         opacity: 0.8;
       }
-
       .balloon::before {
         content: "";
         position: absolute;
@@ -473,7 +397,6 @@
         background: rgba(255, 255, 255, 0.4);
         border-radius: 50%;
       }
-
       .balloon::after {
         content: "";
         position: absolute;
@@ -484,19 +407,9 @@
         height: 20px;
         background: rgba(0, 0, 0, 0.2);
       }
-
       @keyframes floatBalloon {
         0% {
           transform: translateY(0) rotate(0deg);
-        }
-        25% {
-          transform: translateY(-25vh) rotate(5deg);
-        }
-        50% {
-          transform: translateY(-50vh) rotate(-5deg);
-        }
-        75% {
-          transform: translateY(-75vh) rotate(5deg);
         }
         100% {
           transform: translateY(-120vh) rotate(0deg);
@@ -504,7 +417,6 @@
         }
       }
 
-      /* Confetti */
       .confetti-container {
         position: fixed;
         top: 0;
@@ -515,7 +427,6 @@
         z-index: 1000;
         overflow: hidden;
       }
-
       .confetti {
         position: absolute;
         width: 10px;
@@ -523,7 +434,6 @@
         top: -10px;
         animation: confettiFall linear forwards;
       }
-
       @keyframes confettiFall {
         0% {
           transform: translateY(0) rotate(0deg);
@@ -535,120 +445,7 @@
         }
       }
 
-      /* Responsive */
-      @media (max-width: 768px) {
-        .main-title {
-          font-size: 2.5rem;
-        }
-
-        .name-highlight {
-          font-size: 2rem;
-        }
-
-        .surprise-btn {
-          padding: 15px 30px;
-          font-size: 1rem;
-        }
-
-        .slideshow-container {
-          height: 280px;
-        }
-
-        .message-card {
-          padding: 25px;
-        }
-
-        .message-title {
-          font-size: 1.5rem;
-        }
-
-        .message-text {
-          font-size: 1rem;
-        }
-
-        .slide-emoji {
-          font-size: 3.5rem;
-        }
-
-        .slide-text {
-          font-size: 1.2rem;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .main-title {
-          font-size: 2rem;
-        }
-
-        .name-highlight {
-          font-size: 1.6rem;
-        }
-
-        .slideshow-container {
-          height: 250px;
-        }
-      }
-
-      /* Fade animations */
-      .fade-in {
-        animation: fadeIn 0.5s ease forwards;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* Sparkle effect */
-      .sparkle {
-        position: absolute;
-        width: 4px;
-        height: 4px;
-        background: white;
-        border-radius: 50%;
-        animation: sparkle 1s ease-in-out infinite;
-      }
-
-      @keyframes sparkle {
-        0%,
-        100% {
-          opacity: 0;
-          transform: scale(0);
-        }
-        50% {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
-
-      /* Romantic Button */
-      .romantic-btn {
-        padding: 18px 40px;
-        font-size: 1.1rem;
-        font-family: "Poppins", sans-serif;
-        font-weight: 600;
-        color: white;
-        background: linear-gradient(135deg, #dda0dd, #ff69b4);
-        border: none;
-        border-radius: 50px;
-        cursor: pointer;
-        box-shadow: 0 8px 30px rgba(221, 160, 221, 0.4);
-        transition: all 0.3s ease;
-        animation: bounce 2s ease-in-out infinite;
-      }
-
-      .romantic-btn:hover {
-        transform: scale(1.05);
-        box-shadow: 0 12px 40px rgba(221, 160, 221, 0.6);
-      }
-
-      /* Romantic Section */
+      /* ROMANTIC SECTION - Single Photo Slider */
       .romantic-section {
         display: none;
         width: 100%;
@@ -660,13 +457,11 @@
         transition: all 0.8s ease;
         padding: 20px;
       }
-
       .romantic-section.active {
         display: flex;
         opacity: 1;
         transform: translateY(0);
       }
-
       .romantic-title {
         font-family: "Pacifico", cursive;
         font-size: 2.5rem;
@@ -674,8 +469,6 @@
         color: var(--button-primary);
         margin-bottom: 20px;
       }
-
-      /* Back Button */
       .back-btn {
         position: fixed;
         top: 20px;
@@ -693,112 +486,51 @@
         transition: all 0.3s ease;
         z-index: 100;
       }
-
       .back-btn:hover {
         transform: scale(1.05);
         box-shadow: 0 6px 20px rgba(255, 105, 180, 0.5);
       }
 
-      /* Photo Grid */
-      .photo-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
-        margin-bottom: 20px;
-      }
-
-      .photo-item {
+      /* Photo Slider Styles */
+      .photo-slider {
         position: relative;
-        aspect-ratio: 1;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 5px 20px rgba(255, 105, 180, 0.2);
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-
-      .photo-item:hover {
-        transform: scale(1.05);
-        box-shadow: 0 8px 30px rgba(255, 105, 180, 0.4);
-      }
-
-      .photo-item img {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        max-width: 500px;
+        aspect-ratio: 1;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(255, 105, 180, 0.3);
+        margin: 0 auto 20px;
       }
-
-      /* Lightbox */
-      .lightbox {
-        display: none;
-        position: fixed;
+      .photo-slide {
+        position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.9);
-        z-index: 2000;
-        align-items: center;
-        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+      .photo-slide.active {
+        opacity: 1;
+      }
+      .photo-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .photo-counter {
+        text-align: center;
+        font-size: 1rem;
+        color: var(--text-secondary);
+        margin-bottom: 15px;
       }
 
-      .lightbox.active {
-        display: flex;
-      }
-
-      .lightbox-content {
-        max-width: 90%;
-        max-height: 80%;
-        border-radius: 20px;
-        box-shadow: 0 10px 50px rgba(255, 105, 180, 0.5);
-      }
-
-      .lightbox-close {
-        position: absolute;
-        top: 30px;
-        right: 30px;
-        font-size: 2rem;
-        color: white;
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-
-      .lightbox-close:hover {
-        color: var(--button-primary);
-        transform: scale(1.2);
-      }
-
-      .lightbox-nav {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 2rem;
-        color: white;
-        cursor: pointer;
-        padding: 20px;
-        transition: all 0.3s ease;
-      }
-
-      .lightbox-nav:hover {
-        color: var(--button-primary);
-        transform: translateY(-50%) scale(1.2);
-      }
-
-      .lightbox-prev {
-        left: 20px;
-      }
-
-      .lightbox-next {
-        right: 20px;
-      }
-
-      /* Navigation Buttons */
       .nav-buttons {
         display: flex;
         justify-content: center;
         gap: 20px;
       }
-
       .nav-btn {
         padding: 12px 30px;
         font-size: 1rem;
@@ -812,64 +544,62 @@
         box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
         transition: all 0.3s ease;
       }
-
       .nav-btn:hover {
         transform: scale(1.05);
         box-shadow: 0 6px 20px rgba(255, 105, 180, 0.5);
       }
 
       @media (max-width: 768px) {
-        .photo-grid {
-          grid-template-columns: repeat(2, 1fr);
+        .main-title {
+          font-size: 2.5rem;
         }
-
+        .name-highlight {
+          font-size: 2rem;
+        }
+        .surprise-btn {
+          padding: 15px 30px;
+          font-size: 1rem;
+        }
+        .slideshow-container {
+          height: 280px;
+        }
+        .message-card {
+          padding: 25px;
+        }
+        .message-title {
+          font-size: 1.5rem;
+        }
+        .message-text {
+          font-size: 1rem;
+        }
+        .photo-slider {
+          max-width: 350px;
+        }
         .romantic-title {
           font-size: 1.8rem;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .photo-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .romantic-title {
-          font-size: 1.5rem;
         }
       }
     </style>
   </head>
   <body>
-    <!-- Background Particles -->
     <div class="particles" id="particles"></div>
-
-    <!-- Confetti Container -->
     <div class="confetti-container" id="confetti"></div>
-
-    <!-- Balloons Container -->
     <div class="balloons-container" id="balloons"></div>
-
-    <!-- Music Button -->
     <button class="music-btn" id="musicBtn" title="Putar musik ulang tahun">
       🎵
     </button>
 
-    <!-- Main Container -->
     <div class="container">
       <!-- Landing Section -->
       <div class="landing-section" id="landingSection">
         <div class="title-container">
           <h1 class="main-title">
-            Happy Birthday
-            <span class="name-highlight">Sayang! ❤️</span>
+            Happy Birthday<span class="name-highlight">Sayang! ❤️</span>
           </h1>
           <div class="title-decoration">
-            <span>💕</span>
-            <span>❤️</span>
-            <span>💕</span>
+            <span>💕</span><span>❤️</span><span>💕</span>
           </div>
         </div>
-
         <button class="surprise-btn" id="surpriseBtn">
           Klik untuk membuka kejutan 🎁
         </button>
@@ -877,7 +607,6 @@
 
       <!-- Surprise Section -->
       <div class="surprise-section" id="surpriseSection">
-        <!-- Slideshow -->
         <div class="slideshow-container" id="slideshow">
           <div class="slide active">
             <div class="slide-content">
@@ -912,7 +641,6 @@
           <div class="slideshow-dots" id="slideshowDots"></div>
         </div>
 
-        <!-- Message Card -->
         <div class="message-card">
           <h2 class="message-title">💌 Pesan Spesial Untukmu 💌</h2>
           <p class="message-text" id="messageText">
@@ -920,39 +648,30 @@
           </p>
         </div>
 
-        <!-- Button to Romantic Photos -->
-        <button class="romantic-btn" id="romanticBtn">
+        <button class="surprise-btn" id="romanticBtn">
           Lihat Foto Kita 💕
         </button>
       </div>
 
-      <!-- Romantic Photos Section -->
+      <!-- Romantic Photos Section - Single Photo Slider -->
       <div class="romantic-section" id="romanticSection">
         <button class="back-btn" id="backBtn">← Kembali</button>
-
         <h2 class="romantic-title">📸 Momen Kita 💖</h2>
 
-        <div class="photo-grid" id="photoGrid">
-          <!-- Photos will be added here -->
+        <div class="photo-slider" id="photoSlider">
+          <!-- Photos will be inserted by JavaScript -->
         </div>
+
+        <p class="photo-counter" id="photoCounter">1 / 12</p>
 
         <div class="nav-buttons">
           <button class="nav-btn" id="prevPhotoBtn">← Prev</button>
           <button class="nav-btn" id="nextPhotoBtn">Next →</button>
         </div>
       </div>
-
-      <!-- Lightbox -->
-      <div class="lightbox" id="lightbox">
-        <span class="lightbox-close" id="lightboxClose">✕</span>
-        <span class="lightbox-nav lightbox-prev" id="lightboxPrev">❮</span>
-        <img class="lightbox-content" id="lightboxContent" src="" alt="" />
-        <span class="lightbox-nav lightbox-next" id="lightboxNext">❯</span>
-      </div>
     </div>
 
     <script>
-      // Configuration
       const birthdayName = "Sayang";
       const message = `Selamat ulang tahun yang ke-22 Bucaa Tercinta, ${birthdayName}! 🎂🎉
 
@@ -974,22 +693,34 @@ Yang selalu menyayangimu ❤️`;
       const surpriseBtn = document.getElementById("surpriseBtn");
       const landingSection = document.getElementById("landingSection");
       const surpriseSection = document.getElementById("surpriseSection");
+      const romanticSection = document.getElementById("romanticSection");
       const messageText = document.getElementById("messageText");
-      const slideshow = document.getElementById("slideshow");
       const slideshowDots = document.getElementById("slideshowDots");
       const confettiContainer = document.getElementById("confetti");
       const balloonsContainer = document.getElementById("balloons");
       const particlesContainer = document.getElementById("particles");
+      const photoSlider = document.getElementById("photoSlider");
+      const photoCounter = document.getElementById("photoCounter");
 
-      // Audio Context for birthday music
-      let audioContext = null;
-      let isPlaying = false;
-      let oscillator = null;
-      let gainNode = null;
+      // Photo data
+      const romanticPhotos = [
+        "foto1.jpeg",
+        "foto2.jpg",
+        "foto3.jpg",
+        "foto4.jpeg",
+        "foto5.jpeg",
+        "foto6.jpg",
+        "foto7.jpg",
+        "foto8.jpg",
+        "foto9.jpg",
+        "foto10.jpg",
+        "foto11.jpg",
+        "foto12.jpg",
+      ];
+      let currentPhotoIndex = 0;
 
-      // Create background particles
+      // Create particles
       function createParticles() {
-        // Stars
         for (let i = 0; i < 20; i++) {
           const star = document.createElement("div");
           star.className = "star";
@@ -998,8 +729,6 @@ Yang selalu menyayangimu ❤️`;
           star.style.animationDelay = Math.random() * 2 + "s";
           particlesContainer.appendChild(star);
         }
-
-        // Hearts
         for (let i = 0; i < 15; i++) {
           const heart = document.createElement("div");
           heart.className = "heart";
@@ -1025,8 +754,6 @@ Yang selalu menyayangimu ❤️`;
           "#98FB98",
           "#FFA07A",
         ];
-        const shapes = ["circle", "square", "rectangle"];
-
         for (let i = 0; i < 100; i++) {
           const confetti = document.createElement("div");
           confetti.className = "confetti";
@@ -1035,16 +762,11 @@ Yang selalu menyayangimu ❤️`;
             colors[Math.floor(Math.random() * colors.length)];
           confetti.style.width = Math.random() * 10 + 5 + "px";
           confetti.style.height = Math.random() * 10 + 5 + "px";
-          confetti.style.borderRadius =
-            shapes[Math.floor(Math.random() * shapes.length)] === "circle"
-              ? "50%"
-              : "0";
+          confetti.style.borderRadius = Math.random() > 0.5 ? "50%" : "0";
           confetti.style.animationDuration = Math.random() * 2 + 2 + "s";
           confetti.style.animationDelay = Math.random() * 2 + "s";
           confettiContainer.appendChild(confetti);
         }
-
-        // Remove confetti after animation
         setTimeout(() => {
           confettiContainer.innerHTML = "";
         }, 6000);
@@ -1069,8 +791,6 @@ Yang selalu menyayangimu ❤️`;
         balloon.style.width = Math.random() * 30 + 50 + "px";
         balloon.style.height = Math.random() * 40 + 70 + "px";
         balloonsContainer.appendChild(balloon);
-
-        // Remove balloon after animation
         setTimeout(() => {
           balloon.remove();
         }, 13000);
@@ -1078,8 +798,8 @@ Yang selalu menyayangimu ❤️`;
 
       // Create slideshow dots
       function createSlideshowDots() {
-        const slideElements = document.querySelectorAll(".slide");
-        slideElements.forEach((_, index) => {
+        const slides = document.querySelectorAll(".slide");
+        slides.forEach((_, index) => {
           const dot = document.createElement("div");
           dot.className = "dot" + (index === 0 ? " active" : "");
           dot.addEventListener("click", () => goToSlide(index));
@@ -1089,29 +809,18 @@ Yang selalu menyayangimu ❤️`;
 
       // Slideshow functionality
       let currentSlide = 0;
-
-      function getSlides() {
-        return document.querySelectorAll(".slide");
-      }
-
-      function getDots() {
-        return document.querySelectorAll(".dot");
-      }
-
       function goToSlide(index) {
-        const slides = getSlides();
-        const dots = getDots();
-        if (slides.length === 0 || dots.length === 0) return;
-
+        const slides = document.querySelectorAll(".slide");
+        const dots = document.querySelectorAll(".dot");
+        if (slides.length === 0) return;
         slides[currentSlide].classList.remove("active");
         dots[currentSlide].classList.remove("active");
         currentSlide = index;
         slides[currentSlide].classList.add("active");
         dots[currentSlide].classList.add("active");
       }
-
       function nextSlide() {
-        const slides = getSlides();
+        const slides = document.querySelectorAll(".slide");
         if (slides.length === 0) return;
         goToSlide((currentSlide + 1) % slides.length);
       }
@@ -1140,9 +849,9 @@ Yang selalu menyayangimu ❤️`;
         }
       }
 
-      // Music - Using MP3 file
+      // Music
       let birthdayAudio = null;
-
+      let isPlaying = false;
       function playBirthdaySong() {
         if (!birthdayAudio) {
           birthdayAudio = new Audio("lagu.mp3");
@@ -1150,18 +859,15 @@ Yang selalu menyayangimu ❤️`;
         }
         birthdayAudio.play();
       }
-
       function stopMusic() {
         if (birthdayAudio) {
           birthdayAudio.pause();
           birthdayAudio.currentTime = 0;
         }
       }
-
       function toggleMusic() {
         isPlaying = !isPlaying;
         musicBtn.classList.toggle("playing", isPlaying);
-
         if (isPlaying) {
           playBirthdaySong();
         } else {
@@ -1169,13 +875,11 @@ Yang selalu menyayangimu ❤️`;
         }
       }
 
-      // Surprise button click
+      // Surprise button
       let surpriseOpened = false;
       function openSurprise() {
         if (surpriseOpened) return;
         surpriseOpened = true;
-
-        // Create balloons continuously
         const balloonInterval = setInterval(() => {
           if (!surpriseOpened) {
             clearInterval(balloonInterval);
@@ -1183,130 +887,74 @@ Yang selalu menyayangimu ❤️`;
           }
           createBalloon();
         }, 800);
-
-        // Show surprise section
         landingSection.style.display = "none";
         surpriseSection.classList.add("active");
-
-        // Start slideshow
         setInterval(nextSlide, 3000);
-
-        // Start typing after a delay
         setTimeout(typeMessage, 1000);
       }
 
-      // Romantic Photos - DOM Elements
-      const romanticBtn = document.getElementById("romanticBtn");
-      const romanticSection = document.getElementById("romanticSection");
-      const backBtn = document.getElementById("backBtn");
-      const photoGrid = document.getElementById("photoGrid");
-      const prevPhotoBtn = document.getElementById("prevPhotoBtn");
-      const nextPhotoBtn = document.getElementById("nextPhotoBtn");
-      const lightbox = document.getElementById("lightbox");
-      const lightboxContent = document.getElementById("lightboxContent");
-      const lightboxClose = document.getElementById("lightboxClose");
-      const lightboxPrev = document.getElementById("lightboxPrev");
-      const lightboxNext = document.getElementById("lightboxNext");
-
-      // Photo data - Using local photos from folder
-      const romanticPhotos = [
-        "foto1.jpeg",
-        "foto2.jpg",
-        "foto3.jpg",
-        "foto4.jpeg",
-        "foto5.jpeg",
-        "foto6.jpg",
-        "foto7.jpg",
-        "foto8.jpg",
-        "foto9.jpg",
-        "foto10.jpg",
-        "foto11.jpg",
-        "foto12.jpg",
-      ];
-
-      let currentPhotoIndex = 0;
-
-      // Create photo grid
-      function createPhotoGrid() {
+      // Photo Slider Functions
+      function createPhotoSlider() {
         romanticPhotos.forEach((photo, index) => {
-          const photoItem = document.createElement("div");
-          photoItem.className = "photo-item";
-          photoItem.innerHTML = `<img src="${photo}" alt="Photo ${index + 1}">`;
-          photoItem.addEventListener("click", () => openLightbox(index));
-          photoGrid.appendChild(photoItem);
+          const slide = document.createElement("div");
+          slide.className = "photo-slide" + (index === 0 ? " active" : "");
+          slide.innerHTML = `<img src="${photo}" alt="Photo ${index + 1}">`;
+          photoSlider.appendChild(slide);
         });
+        updatePhotoCounter();
       }
 
-      // Open lightbox
-      function openLightbox(index) {
+      function showPhoto(index) {
+        const slides = document.querySelectorAll(".photo-slide");
+        slides.forEach((s) => s.classList.remove("active"));
+        slides[index].classList.add("active");
         currentPhotoIndex = index;
-        lightboxContent.src = romanticPhotos[currentPhotoIndex];
-        lightbox.classList.add("active");
+        updatePhotoCounter();
       }
 
-      // Close lightbox
-      function closeLightbox() {
-        lightbox.classList.remove("active");
+      function updatePhotoCounter() {
+        photoCounter.textContent = `${currentPhotoIndex + 1} / ${romanticPhotos.length}`;
       }
 
-      // Navigate lightbox
-      function navigateLightbox(direction) {
-        currentPhotoIndex += direction;
-        if (currentPhotoIndex < 0) {
-          currentPhotoIndex = romanticPhotos.length - 1;
-        } else if (currentPhotoIndex >= romanticPhotos.length) {
-          currentPhotoIndex = 0;
-        }
-        lightboxContent.src = romanticPhotos[currentPhotoIndex];
+      function prevPhoto() {
+        const newIndex =
+          currentPhotoIndex === 0
+            ? romanticPhotos.length - 1
+            : currentPhotoIndex - 1;
+        showPhoto(newIndex);
       }
 
-      // Open romantic section
-      function openRomanticSection() {
-        surpriseSection.style.display = "none";
-        romanticSection.classList.add("active");
-      }
-
-      // Go back to surprise section
-      function goBack() {
-        romanticSection.classList.remove("active");
-        surpriseSection.style.display = "flex";
+      function nextPhoto() {
+        const newIndex =
+          currentPhotoIndex === romanticPhotos.length - 1
+            ? 0
+            : currentPhotoIndex + 1;
+        showPhoto(newIndex);
       }
 
       // Event Listeners
       musicBtn.addEventListener("click", toggleMusic);
       surpriseBtn.addEventListener("click", openSurprise);
-      romanticBtn.addEventListener("click", openRomanticSection);
-      backBtn.addEventListener("click", goBack);
-      prevPhotoBtn.addEventListener(
-        "click",
-        () =>
-          (currentPhotoIndex =
-            (currentPhotoIndex - 1 + romanticPhotos.length) %
-            romanticPhotos.length),
-      );
-      nextPhotoBtn.addEventListener(
-        "click",
-        () =>
-          (currentPhotoIndex = (currentPhotoIndex + 1) % romanticPhotos.length),
-      );
-      lightboxClose.addEventListener("click", closeLightbox);
-      lightboxPrev.addEventListener("click", () => navigateLightbox(-1));
-      lightboxNext.addEventListener("click", () => navigateLightbox(1));
-
-      // Close lightbox when clicking outside
-      lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) {
-          closeLightbox();
-        }
+      document.getElementById("romanticBtn").addEventListener("click", () => {
+        surpriseSection.style.display = "none";
+        romanticSection.classList.add("active");
       });
+      document.getElementById("backBtn").addEventListener("click", () => {
+        romanticSection.classList.remove("active");
+        surpriseSection.style.display = "flex";
+      });
+      document
+        .getElementById("prevPhotoBtn")
+        .addEventListener("click", prevPhoto);
+      document
+        .getElementById("nextPhotoBtn")
+        .addEventListener("click", nextPhoto);
 
       // Initialize
       createParticles();
       createConfetti();
       createSlideshowDots();
-      createPhotoGrid();
-
-      // Create initial balloons
+      createPhotoSlider();
       for (let i = 0; i < 8; i++) {
         setTimeout(createBalloon, i * 500);
       }
